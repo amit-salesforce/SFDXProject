@@ -1,6 +1,8 @@
 public with sharing class ContactController {
- /* This is for a Demo */
-    @AuraEnabled(cacheable=true)
+
+ /* This is for a SFDX 1-2-3 */
+ 
+     @AuraEnabled(cacheable=true)
     public static List<Contact> getContactList() {
         return [SELECT Id, Name, Title, Phone, Email FROM Contact  LIMIT 10];
     }
