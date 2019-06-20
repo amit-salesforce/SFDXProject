@@ -1,6 +1,5 @@
 public with sharing class ContactController {
-
- /* This is for a SFDX 1-2-3 */
+ 
  
      @AuraEnabled(cacheable=true)
     public static List<Contact> getContactList() {
