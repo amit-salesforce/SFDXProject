@@ -91,7 +91,7 @@
 
     <!-- Shows check only; never actually saves to the server -->
     <target name="deployCodeCheckOnly">
-      <sf:deploy username="rohitdev@salesforce.com" password="Omsairam_9909" sessionId="${sf.sessionId}" serverurl="https://login.salesforce.com" maxPoll="720" deployRoot="/manifest/package.xml"/>
+      <sf:deploy username="rohitdev@salesforce.com" password="Omsairam_9909" sessionId="${sf.sessionId}" serverurl="https://login.salesforce.com" maxPoll="720" deployRoot="/force-app/main/default/"/>
     </target>
 	
 	<!-- Shows quick deployment of recent validation. Set the property sf.recentValidationId to your recent check only deployment Id -->
