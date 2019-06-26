@@ -1,5 +1,6 @@
 public with sharing class ContactController {
 
+  
 public static List<Contact> getContactList() {
         return [SELECT Id, Name, Title, Phone, Email FROM Contact  LIMIT 10];
     }
@@ -13,7 +14,6 @@ public static List<Contact> getContactList() {
     @AuraEnabled(cacheable=true)
     public static Contact getSingleContact(){
         return [SELECT Id, Name, Title, Phone, Email FROM Contact LIMIT 1];
-/*comments on dev branch 3*/
     }
- 
+
 }
