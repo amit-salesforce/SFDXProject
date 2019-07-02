@@ -1,5 +1,5 @@
 public with sharing class AccountController {
-    /*THIS IS MY !ST CHANGE IN ACCOUNT 2*/
+    /*THIS IS change*/
     @AuraEnabled(cacheable=true)
     public static List<Account> findAccounts(String searchKey) {
         String key = '%' + searchKey + '%';
