@@ -5,7 +5,6 @@
         <name>Layout</name>
 </types>
     <types>
-        <members>ContactController</members>
         <members>AccountController</members>
         <name>ApexClass</name>
     </types>
