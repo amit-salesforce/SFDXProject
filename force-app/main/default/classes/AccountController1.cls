@@ -1,4 +1,4 @@
-public with sharing class AccountController {
+public with sharing class AccountController1 {
     /*rohith changes*/
     @AuraEnabled(cacheable=true)
     public static List<Account> findAccounts(String searchKey) {
