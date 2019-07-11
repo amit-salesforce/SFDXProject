@@ -6,8 +6,8 @@
 </types>
     <types>
         <members>AccountController</members>
-        <name>ApexClass
-        </name>
+        <members>AccountController1</members>
+        <name>ApexClass</name>
     </types>
     <version>44.0</version>
 </Package>
