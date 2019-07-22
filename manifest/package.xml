@@ -7,7 +7,6 @@
 </types>
     <types>
         <members>AccountController</members>
-        <members>AccountController1</members>
         <members>ContactController</members>
         <name>ApexClass</name>
     </types>
