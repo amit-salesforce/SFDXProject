@@ -39,8 +39,8 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest/package.xml -u ${HUB_ORG}"
 			}else{
-			   bat returnStdout: true, script: "cd .."
-				bat returnStdout: true, script: "cd new pipeline@script"
+			   bat returnStdout: true, script: "git clone https://github.com/agale007/SFDXProject.git"
+				//bat returnStdout: true, script: "cd new pipeline@script"
 				rmsg = bat returnStdout: true, script: "sfdx force:source:deploy --manifest manfiest/package.xml --json --loglevel fatal -u ${HUB_ORG}"
 			}
 			  
