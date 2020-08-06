@@ -22,7 +22,18 @@ node {
 
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
 	    
-	  
+	
+    stages {
+	    stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/agale007/SFDXProject.git'
+
+              
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
 	    
         stage('Deploye Code') {
             if (isUnix()) {
@@ -39,7 +50,7 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest/package.xml -u ${HUB_ORG}"
 			}else{
-			   bat returnStdout: true, script: "git clone https://github.com/agale007/SFDXProject.git"
+			   //bat returnStdout: true, script: "git clone https://github.com/agale007/SFDXProject.git"
 				//bat returnStdout: true, script: "cd new pipeline@script"
 				rmsg = bat returnStdout: true, script: "sfdx force:source:deploy --manifest manfiest/package.xml --json --loglevel fatal -u ${HUB_ORG}"
 			}
@@ -48,5 +59,6 @@ node {
             println('Hello from a Job DSL script!')
             println(rmsg)
         }
+    }
     }
 }
