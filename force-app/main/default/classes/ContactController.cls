@@ -8,7 +8,7 @@ public with sharing class ContactController {
     @AuraEnabled(cacheable=true)
     public static List<Contact> findContacts(String searchKey) {
         String key = '%' + searchKey + '%';
-        return [SELECT Id, Name, Title, Phone, Email FROM Contact WHERE Name LIKE :key  LIMIT 10];
+        return [SELECT Id, Name, Title, Phone, Email FROM Contact WHERE Name LIKE :key  LIMIT 11];
     }
 
     @AuraEnabled(cacheable=true)
