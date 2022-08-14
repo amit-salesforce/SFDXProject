@@ -23,10 +23,10 @@ node {
     // Check out code from source control.
     // -------------------------------------------------------------------------
 
-    stage('checkout source') {
-        // when running in multi-branch job, one must issue this command
-        checkout scm
-    }
+    //stage('checkout source') {
+    //    // when running in multi-branch job, one must issue this command
+    //    checkout scm
+    //}
 
     // -------------------------------------------------------------------------
     // Run all the enclosed stages with access to the Salesforce
