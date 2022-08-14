@@ -42,18 +42,18 @@ node {
             // -------------------------------------------------------------------------
 
             stage('Authorize DevHub') {
-                rc = command "\"${toolbelt}\sfdx" force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyfile ${server_key_file} --setdefaultdevhubusername --setalias HubOrg"
+                rc = command "\"${toolbelt}\sfdx" force:auth:jwt:grant --clientid ${SERVER_KEY_CREDENTALS_ID} --username ${SF_USERNAME} --jwtkeyfile \"${server_key_file}\" --setdefaultdevhubusername --instanceurl ${SF_INSTANCE_URL}"
                 if (rc != 0) {
                     error 'Salesforce dev hub org authorization failed.'
                 }
             }
 		
-	    stage('Deploy Code') {
-		rc = command "\"${toolbelt}\sfdx" force:mdapi:deploy -d manifest/. -u ${SF_USERNAME}"
-		if (rc != 0) {
-                    error 'Salesforce deploy failed'
-                }
-            }
+	   // stage('Deploy Code') {
+	   //	rc = command "\"${toolbelt}\sfdx" force:mdapi:deploy -d manifest/. -u ${SF_USERNAME}"
+	   //	if (rc != 0) {
+           //         error 'Salesforce deploy failed'
+           //     }
+           // }
 	}
     }
 }
