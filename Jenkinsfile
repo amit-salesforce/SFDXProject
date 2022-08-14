@@ -42,12 +42,12 @@ node {
 
 
 		
-	   // stage('Deploy Code') {
-	   //	rc = command "\"${toolbelt}\sfdx" force:mdapi:deploy -d manifest/. -u ${SF_USERNAME}"
-	   //	if (rc != 0) {
-           //         error 'Salesforce deploy failed'
-           //     }
-           // }
+	    stage('Deploy Code') {
+	   	rc = command "\"${toolbelt}/sfdx\" force:mdapi:deploy -d manifest/. -u ${SF_USERNAME}"
+	   	if (rc != 0) {
+                    error 'Salesforce deploy failed'
+               }
+            }
 	}
     }
 }
