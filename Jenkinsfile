@@ -31,7 +31,7 @@ node {
             if (isUnix()) {
                 rc = sh returnStatus: true, script: "${toolbelt}  org login jwt --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }else{
-                 rc = bat returnStatus: true, script: "\"${toolbelt}\" org login jwt --username bhushan.jagtap@company.sandbox --jwt-key-file server.key --client-id 3MVG9fe4g9fhX0E772aZpl_qj7EnCBj28RXBgl4aIFt1Agdg04qE6Oar5tnK2jbDMM35PyjfV8PwQpexSsXwx"
+                 rc = bat returnStatus: true, script: "\"${toolbelt}\" org login jwt --username bhushan.jagtap@company.sandbox --jwt-key-file C:\Program Files\openssl\bin\server.key --client-id 3MVG9fe4g9fhX0E772aZpl_qj7EnCBj28RXBgl4aIFt1Agdg04qE6Oar5tnK2jbDMM35PyjfV8PwQpexSsXwx"
             }
             if (rc != 0) { error 'hub org authorization failed' }
 
